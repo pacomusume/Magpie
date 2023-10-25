@@ -250,7 +250,7 @@ void OverlayDrawer::SetUIVisibility(bool value) noexcept {
 			HWND hwndHost = MagApp::Get().GetHwndHost();
 			INT_PTR style = GetWindowLongPtr(hwndHost, GWL_EXSTYLE);
 			SetWindowLongPtr(hwndHost, GWL_EXSTYLE, style & ~(WS_EX_TRANSPARENT | WS_EX_NOACTIVATE));
-			Win32Utils::SetForegroundWindow(hwndHost);
+			// Win32Utils::SetForegroundWindow(hwndHost);  // 这一行已被注释掉
 
 			// 使源窗口无法接收用户输入
 			_EnableSrcWnd(false);
